@@ -33,5 +33,3 @@ ENV JENKINS_OPTS '--accessLoggerClassName=winstone.accesslog.SimpleAccessLogger 
 RUN usermod -a -G docker jenkins
 
 USER jenkins
-
-CMD chown jenkins:jenkins /var/run/docker.sock
