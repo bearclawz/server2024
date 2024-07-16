@@ -10,20 +10,22 @@ services:
       - jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
     restart: on-failure
-  ssh-agent:
+  #  ssh-agent:
+  #    # imagefile details: https://hub.docker.com/r/jenkins/ssh-agent/dockerfile
+  #    image: jenkins/ssh-agent
+  ##    image: ssh-agent
+  ##    build:
+  ##      context: "."
+  ##      dockerfile: "Dockerfile.ssh_slave"
+  #    restart: on-failure
+  cssh-agent:
     # imagefile details: https://hub.docker.com/r/jenkins/ssh-agent/dockerfile
-    image: jenkins/ssh-agent
-#    image: ssh-agent
-#    build:
-#      context: "."
-#      dockerfile: "Dockerfile.ssh_slave"
-    restart: on-failure
-  tcp-agent:
-    # imagefile details: https://hub.docker.com/r/jenkins/ssh-agent/dockerfile
-    image: tcp-agent
+    image: ssh-custom-agent
+    ports:
+      - "2222:22"
     build:
       context: "."
-      dockerfile: "Dockerfile.tcp_slave"
+      dockerfile: "Dockerfile.cssh_slave"
     restart: on-failure
 volumes:
   jenkins_home:
