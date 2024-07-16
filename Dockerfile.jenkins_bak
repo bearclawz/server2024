@@ -1,0 +1,10 @@
+FROM jenkins/jenkins:lts
+
+USER ROOT
+#in case tools needed on OS level example:
+#RUN apt-get update && apt-get install -y ruby python nano 
+
+#set logs to be accessible from within jenkins (differs from copy to server)
+ENV JENKINS_OPTS '--accessLoggerClassName=winstone.accesslog.SimpleAccessLogger --simpleAccessLogger.format=combined --simpleAccessLogger.file=/var/jenkins_home/logs/access_log'
+
+USER jenkins
