@@ -2,7 +2,6 @@ FROM jenkins/jenkins:lts
 
 USER root
 
-
 RUN apt-get update && \
 apt-get -y install apt-transport-https \
      ca-certificates \
@@ -34,3 +33,5 @@ ENV JENKINS_OPTS '--accessLoggerClassName=winstone.accesslog.SimpleAccessLogger 
 RUN usermod -a -G docker jenkins
 
 USER jenkins
+
+CMD chown jenkins:jenkins /var/run/docker.sock
