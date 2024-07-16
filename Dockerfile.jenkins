@@ -25,7 +25,8 @@ RUN curl -L "https://github.com/docker/compose/releases/download/2.18.0/docker-c
 RUN chmod +x /usr/local/bin/docker-compose
 
 #add jenkins user rights for shared volume /var/run/docker.sock
-RUN chown jenkins:jenkins /var/run/docker.sock
+#below commented, causes error, needs to be set after containers up via script or ssh agent to avoid need
+#RUN chown jenkins:jenkins /var/run/docker.sock
 
 #set logs to be accessible from within jenkins (differs from copy to server)
 ENV JENKINS_OPTS '--accessLoggerClassName=winstone.accesslog.SimpleAccessLogger --simpleAccessLogger.format=combined --simpleAccessLogger.file=/var/jenkins_home/logs/access_log'
