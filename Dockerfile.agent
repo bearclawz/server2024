@@ -1,6 +1,6 @@
 FROM jenkins/ssh-agent
 
-USER root
+#USER root
 
 #RUN apt-get install -y  openjdk-8-jre wget iproute2 git docker-compose curl
 
