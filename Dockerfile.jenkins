@@ -16,7 +16,7 @@ add-apt-repository \
 apt-get update && \
 apt-get -y install docker-ce
 
-RUN apt-get install -y docker-ce
+# RUN apt-get install -y docker-ce
 
 # add compose:
 # RUN curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
