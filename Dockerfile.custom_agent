@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN groupadd -g 1000 jenkins
 RUN useradd -d /home/jenkins -s /bin/bash \
 -m jenkins -u 1000 -g jenkins
-RUN #echo jenkins:jpass | chpasswd
+#RUN echo jenkins:jpass | chpasswd
 RUN apt-get update && \
 apt-get install -y openssh-server openjdk-8-jre wget iproute2 git docker-compose curl
 RUN mkdir -p /var/run/sshd
