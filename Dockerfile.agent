@@ -2,7 +2,7 @@ FROM jenkins/ssh-agent
 
 USER root
 
-RUN apt-get install -y openssh-server openjdk-8-jre wget iproute2 git docker-compose curl
+#RUN apt-get install -y  openjdk-8-jre wget iproute2 git docker-compose curl
 
 #FROM ubuntu:20.04
 #ENV DEBIAN_FRONTEND noninteractive
