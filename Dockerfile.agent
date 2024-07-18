@@ -28,6 +28,5 @@ apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin do
 #apt-get update && \
 #apt-get -y install docker-ce
 
-
-
-USER ${user}
+#USER ${user}
+USER jenkins

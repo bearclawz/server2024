@@ -19,6 +19,7 @@ services:
       dockerfile: "Dockerfile.agent"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - /tmp:/home/jenkins
     restart: on-failure
   ssh-agent2:
     # imagefile details: https://hub.docker.com/r/jenkins/ssh-agent/dockerfile
