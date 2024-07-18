@@ -26,7 +26,7 @@ services:
       context: "."
       dockerfile: "Dockerfile.agent"
     volumes:
-      - jenkins_home:/home/jenkins/
+      #      - jenkins_home:/home/jenkins/
       - /var/run/docker.sock:/var/run/docker.sock
     restart: on-failure
 volumes:
