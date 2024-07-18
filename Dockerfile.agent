@@ -5,6 +5,14 @@ COPY --chown=jenkins jenkins_agent_key.pub "${JENKINS_AGENT_HOME}"/.ssh/authoriz
 USER root
 
 RUN apt-get update && \
-  apt-get install --no-install-recommends -y wget iproute2 git docker-compose curl
+apt-get install --no-install-recommends -y wget iproute2 git docker-compose curl &&\
+curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg > /tmp/dkey; apt-key add /tmp/dkey && \
+add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") \
+   $(lsb_release -cs) \
+   stable" && \
+apt-get -y install docker-ce
+
+
 
 USER ${user}
