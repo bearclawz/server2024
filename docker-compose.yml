@@ -27,7 +27,7 @@ services:
     build:
       context: "."
       dockerfile: "Dockerfile.agent"
-    network_mode: "host"
+#    network_mode: "host"
     volumes:
       - /tmp:/home/jenkins/workspace
       - /var/run/docker.sock:/var/run/docker.sock
