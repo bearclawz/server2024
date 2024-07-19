@@ -27,9 +27,10 @@ services:
     build:
       context: "."
       dockerfile: "Dockerfile.agent"
-#    volumes:
-#      - /home/jenkins:/home/jenkins
-#      - /var/run/docker.sock:/var/run/docker.sock
+#    network_mode: "host"
+    volumes:
+      - /tmp:/home/jenkins/workspace
+      - /var/run/docker.sock:/var/run/docker.sock
     restart: on-failure
 volumes:
   jenkins_home:
