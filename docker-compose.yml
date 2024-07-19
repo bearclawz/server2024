@@ -17,7 +17,7 @@ services:
     build:
       context: "."
       dockerfile: "Dockerfile.agent"
-    volumes:
+#    volumes:
 #      - /var/run/docker.sock:/var/run/docker.sock
     restart: on-failure
   ssh-agent2:
@@ -27,7 +27,7 @@ services:
     build:
       context: "."
       dockerfile: "Dockerfile.agent"
-    volumes:
+#    volumes:
 #      - /home/jenkins:/home/jenkins
 #      - /var/run/docker.sock:/var/run/docker.sock
     restart: on-failure
