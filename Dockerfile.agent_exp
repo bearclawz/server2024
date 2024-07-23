@@ -6,7 +6,7 @@ USER root
 
 #ssh-agent is debian based use debian (bookworm) instructions to install docker: https://docs.docker.com/engine/install/debian/
 RUN apt-get update && \
-apt-get install --no-install-recommends -y wget iproute2 git ca-certificates curl gnupg2 software-properties-common sshpass && \
+apt-get install --no-install-recommends -y wget iproute2 git ca-certificates curl gnupg2 software-properties-common sshpass #&& \
 #    # Add Docker's official GPG key:
 #install -m 0755 -d /etc/apt/keyrings && \
 #curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc && \
