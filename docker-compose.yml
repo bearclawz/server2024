@@ -16,8 +16,9 @@ services:
     hostname: agent_1
     build:
       context: "."
-      dockerfile: "Dockerfile.agent"
+      dockerfile: "Dockerfile.agent_exp"
 #    volumes:
+#      - /tmp:/home/jenkins/workspace
 #      - /var/run/docker.sock:/var/run/docker.sock
     restart: on-failure
   ssh-agent2:
